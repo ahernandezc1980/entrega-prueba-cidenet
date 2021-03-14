@@ -1,0 +1,69 @@
+-- 14/03/2021--
+
+Pasos a seguir para despliegue Prueba tecnica CIDENET:
+
+0- Visualizar el Modelo Entidad Relacion en el archivo ER.drawio
+1- Ejecutar el bloque anonimo con nombre de archivo: Scrips_tablas.sql.
+2- Ejecutar el bloque anonimo con nombre de archivo: Scrips_vista_empleados.sql.
+3- Ejecutar el bloque anonimo con nombre de archivo: Scrips_paquete_gestion_empleados_header.sql
+4- Ejecutar el bloque anonimo con nombre de archivo: Scrips_paquete_gestion_empleados_body.sql
+
+/********************** Registrar Empleados *******************/
+
+5 - Ejecutar archivo nombrado: Scrips_Insert_tablas_parametricas.sql.
+
+6 - Ejecutar archivo Scripts_select_tablas_paremetricas.sql para verificar punto anterior.
+
+7 - Ejecutar el bloque anonimo con nombre de archivo: Scrips_bloque_anonimo_paquete_gestion_registro_empleados.sql
+    Nota: a continuacion se muestran los parametros del bloque anonimo para gestionar el registro, cambiar sus valores para la prueba.
+  		p_tipo_identificacion_id := 2;
+  		p_area_id := 5;
+  		p_primer_nombre := 'ALEXANDER';
+  		p_otros_nombres := 'ELIAS';
+  		p_primer_apellido := 'HERNANDEZ';
+  		p_segundo_apellido := 'CUADRADO';
+  		p_pais_id := 2;
+  		p_numero_identificacion := 'C-9145446';
+  		p_fecha_ingreso := sysdate;
+8 - Ejecutar el bloque anonimo con nombre de archivo: Scrips_bloque_anonimo_paquete_gestion_actualizacion_empleados.sql
+	Nota: a continuacion se muestran los parametros del bloque anonimo para gestionar la actualizacion de los empleados registrados en el punto anterior, cambiar sus valores para la prueba.
+  		p_empleado_id := null;
+  		p_tipo_identificacion_id := null;
+  		p_area_id := null;
+  		p_primer_nombre := null;
+  		p_otros_nombres := null;
+  		p_primer_apellido := null;
+  		p_segundo_apellido := null;
+  		p_pais_id := null;
+  		p_numero_identificacion := null;
+  		p_fecha_edicion := null;
+
+9 - Ejecutar el bloque anonimo con nombre de archivo: Scrips_bloque_anonimo_paquete_gestion_consulta_empleados.sql
+	Nota: a continuacion se muestran los parametros del bloque anonimo para consultar los empleados registrados y/o actualizados en los puntos anteriores, cambiar sus valores para la prueba.
+		si se hace una ejecucion de este bloque sin modificar ninguno de los filtros null , debe arrojar como resultado todos los empleados registrados.		
+		p_primer_nombre := null;
+  		p_otros_nombres := null;
+  		p_primer_apellido := null;
+  		p_segundo_apellido := null;
+  		p_tipo_identificacion_id := null;
+  		p_pais_id := null;
+  		p_numero_identificacion := null;
+  		p_correo_electronico := null;
+  		p_estado := null;
+
+10 - Ejecutar el bloque anonimo con nombre de archivo: Scrips_bloque_anonimo_paquete_gestion_eliminar_empleado.sql
+	Nota: a continuacion se muestran los parametros del bloque anonimo para eliminar empleados registrados y/o actualizados en el punto anterior, cambiar sus valores para la prueba.
+		 p_empleado_id := 123;
+
+11 - Ingresar al Link https://apex.oracle.com/pls/apex/work_space_desarrollo/r/registro-empleados/home?clear=1&session=780911404661 
+	usuario : cidenet
+	pasword: cidenet123*
+    
+     Donde se podra apreciar una palicacion la cual utiliza los objetos desarrollados para la prueba. advertencia los objetos de esta aplicacion estan alojados en 
+	un espacio de trabajo que provee la herramienta Apex e oracle.	
+
+
+
+
+
+
